@@ -1,0 +1,111 @@
+- used in many companies
+- run only in browser (JavaScript Engine Spidermonkey)
+- JavaScript Engine of Chrome in C++ into own program called Node
+- JavaScript can run in JavaScript Browser and NodeBrowser
+- ECMAScript is the specification and JavaScript is a language conforming this language
+
+Introduction to NodeJS
+
+What is NodeJS?
+Features of NodeJS 
+
+Prerequisite
+- Understanding of JavaScript
+- Better to have the understanding of Server side programming language
+
+Introduction
+- Ryan Dahl in 2009
+- JavasScript based Framework
+- MIT license
+- open source 
+- Spidermonkey Firefox, V8 Chrome, Charka Internet Explorer
+- runtime environment and library
+- server side platform
+- built on V8
+- used to develop I/0 intensive web applications
+
+Features of NodeJS
+- event driven
+- single threaded
+- asynchronous
+- no buffering 
+
+When to use?
+- for streaming and event based applications	
+	- chat applications
+	- game servers 
+	- single page applications
+
+What is NodeJS and it pros and cons?
+- its an open source runtime environment for JS
+- became the most used tool in the beackend web development
+- Node is part of popular MEAN and MERN, JavaScript centered technology stacks 
+
+Strengths of Node
+- JS on  server 
+- good for microservices
+- fast responses
+- support and community
+- packages 
+- easy to learn 
+- compiled to machine code instead of using interpreter 
+
+Drawbacks of NodeJS
+- cpu bottleneck
+- immature tools
+- few experienced developers
+
+Difference between Client Side and Server Side
+- behavior server 
+
+
+How NodeJS works? 
+- highly scalabe, data intensiv and real time apps
+- non block asynchronous
+- node applications are synchronous by default
+- ideal for i/o intensiv apps
+- do NOT use node for cpu intensive works
+
+EventQueue 
+- Node good for database access
+- Node is highly scalable
+- not use 
+
+NodeJS Architecture
+- JS Code -> JS Engine -> Machine Code 
+- V8 embedded in C++ 
+
+Client Server Architecture
+
+Multi Thread Model
+- each request by separate thread
+- thread acquires a lock in the shared resource and its exclusive lock. it will block other threads  
+
+Single Thread Model
+- NodeJS is event driven, handling all request asynchronous from single thread
+- almost no function in Node directly performs I/O so the proces never blocks
+
+Users -> EventEmitters -> EventQueue -> EventLoop ( Single Threaded) -> Thread Pool -> Databases
+
+Multi Threaded vs Asynchronous Event driven
+
+multi: 
+- lock application / request with listener worker-threads
+- using income request model
+- multithreaded server might block 
+
+
+Uber old architecture: 
+- PHP 
+
+Uber New Architecture
+- Real Tiem logic 
+Dispatch State ( MongoDB )
+- Dispatch (NodeJS)
+
+Python 
+Persistent Storage (MySQL)
+
+Well suited for distributed system that make a lot of network requests
+errors can be adressed on the fly without requiring a start 
+active open source community 
