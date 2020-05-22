@@ -17,5 +17,13 @@ http.createServer(function(req,res) {
         res.write('Teacher');
         res.end();
     }
+    else if (req.url == '/admin') {
+        res.writeHead(200, {'Content-Type' : 'text/html'});
+        res.write('admin');
+        res.end();
+    }
+    else {
+        res.end('Invalid url request');
+    }
     
 }).listen(3000);
