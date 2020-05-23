@@ -17,7 +17,7 @@ yargs.command({
         }
 
     },
-    handler : function(argv){
+    handler : (argv) => {
         //console.log('Running yargs command add');
         work.addNote(argv.title, argv.body);
     }
@@ -33,26 +33,20 @@ yargs.command({
             type: 'string'
         }
     },
-    handler : function(argv){
-       work.removeNote(argv.title);
-    }
+    handler : (argv) => work.removeNote(argv.title)
 });
 
 yargs.command({
     command: 'list',
     describe : 'List all note',
-    handler : function(){
-        work.listNotes();
-    }
+    handler : () => work.listNotes()
+    
 });
 
 yargs.command({
     command: 'read',
     describe : 'Read a note',
-    handler : function(argv){
-        work.readNote(argv.title);
-    }
+    handler : (argv) => work.readNote(argv.title)
 });
-
 
 yargs.parse();

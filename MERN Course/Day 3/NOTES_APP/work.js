@@ -1,10 +1,8 @@
 var fs = require('fs');
 
-var addNote = function(title, body){
+var addNote = (title, body) => {
     var notes = loadNotes();
-    var duplicateNotes = notes.filter(function (note){
-        return note.title === title;
-    });
+    var duplicateNotes = notes.filter((note) => note.title === title);
 
     if(duplicateNotes.length === 0){
         notes.push({
@@ -18,17 +16,15 @@ var addNote = function(title, body){
     }
 };
 
-var saveNotes = function(notes){
+var saveNotes = (notes) => {
     var dataJSON = JSON.stringify(notes);
     fs.writeFileSync('json.json', dataJSON);
 
 };
 
-var removeNote = function(title) {
+var removeNote = (title) =>  {
     var notes = loadNotes();
-    var notesToKeep = notes.filter(function(note) {
-        return note.title !== title;
-    });
+    var notesToKeep = notes.filter((note) => note.title !== title);
     if (notes.length > notesToKeep.length) {
         saveNotes(notesToKeep);
         console.log('Notes removed successfully.');
@@ -37,7 +33,7 @@ var removeNote = function(title) {
     }
 }
 
-var loadNotes = function(){
+var loadNotes = () => {
     try{
         var buf = fs.readFileSync('json.json');
         var dataJSON = buf.toString();
@@ -48,7 +44,7 @@ var loadNotes = function(){
     }
 };
 
-var listNotes = function() {
+var listNotes = () => {
     var notes = loadNotes();
     console.log('List of Notes being populated:');
     notes.forEach(note => {
@@ -56,11 +52,9 @@ var listNotes = function() {
     });
 };
 
-var readNote = function(title) {
+var readNote = (title) =>  {
     var notes = loadNotes();
-    var note = notes.find(function(note) {
-            return note.title === title;
-    });
+    var note = notes.find((note) => note.title === title);
 
     if (note) {
         console.log('You are reading: ' + note.title);
